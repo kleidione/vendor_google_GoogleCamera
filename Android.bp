@@ -1,0 +1,43 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+    imports: [
+    ],
+}
+
+android_app_import {
+    name: "GoogleCamera",
+    owner: "google",
+    apk: "proprietary/product/priv-app/GoogleCamera/GoogleCamera.apk",
+    overrides: [
+        "Aperture",
+        "Camera",
+        "Camera2",
+        "Snap",
+        "SnapdragonCamera",
+    ],
+    presigned: true,
+    preprocessed: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "default-permissions-googlecamera",
+    product_specific: true,
+    sub_dir: "default-permissions",
+    src: "proprietary/product/etc/permissions/default-permissions.xml",
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-googlecamera",
+    product_specific: true,
+    sub_dir: "permissions",
+    src: "proprietary/product/etc/permissions/privapp-permissions.xml",
+}

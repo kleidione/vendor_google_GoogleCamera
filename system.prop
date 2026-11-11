@@ -1,0 +1,5 @@
+# Google Lens
+ro.com.google.lens.oem_camera_package=com.google.android.apps.cameralite
+
+# Framework allowlists
+persist.vendor.camera.privapp.list=com.google.android.apps.cameralite
